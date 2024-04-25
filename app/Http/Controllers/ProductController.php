@@ -85,6 +85,16 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+
+
+
+          $products = DB::table('products')
+        ->join('categories', 'products.category_id', '=' , 'categories.id')
+        ->select('products.*', "categories.name")
+        ->get();
+    
+    return view('product.index', ['products' => $products]);
     }
 }
