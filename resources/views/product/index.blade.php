@@ -15,7 +15,7 @@
 
     <h1>Listado de Productos</h1>
 
-    
+    <a href="{{ route('products.create') }}" class="btn btn-success">Add</a>
 
     <table class="table">
         <thead>
@@ -38,7 +38,7 @@
                 <td>{{ $product->name}}</td> 
                 <td>
 
-                     
+                     <span>actions</span>
                   </td>
                    
           </tr>
