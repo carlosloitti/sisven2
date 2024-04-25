@@ -13,7 +13,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-       
+        $products = DB::table('products')
+            ->join('categories', 'products.category_id', '=' , 'categories.id')
+            ->select('products.*', "categories.name")
+            ->get();
+        
+        return view('product.index', ['products' => $products]);
     }
 
     /**
