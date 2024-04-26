@@ -23,19 +23,19 @@
             </div>
             <div class="mb-3">
               <label for="name" class="form-label">Producto Nombre</label>
-              <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="name"
+              <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name"
              placeholder="Producto Nombre" >             
             </div>
 
             <div class="mb-3">
                 <label for="name" class="form-label">Producto Precio</label>
-                <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="price"
+                <input type="text" class="form-control" id="price" aria-describedby="nameHelp" name="price"
                placeholder="Producto price" >             
               </div>
 
               <div class="mb-3">
                 <label for="name" class="form-label">Producto Stock</label>
-                <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="stock"
+                <input type="text" class="form-control" id="stock" aria-describedby="nameHelp" name="stock"
                placeholder="Producto Stock" >             
               </div>
  

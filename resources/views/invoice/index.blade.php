@@ -39,6 +39,9 @@
                 
                 <td>
 
+                    <a href=" {{ route('invoices.edit' , ['invoice'=>$invoice->id]) }} " 
+                        class=" btn btn-info"> Edit </a></li>
+
                     <form action="{{ route('invoices.destroy', ['invoice' =>$invoice->id]) }}"
                         method="POST" style="display: inline-block">
                         @method('delete')

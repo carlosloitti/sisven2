@@ -30,13 +30,13 @@
 
             <div class="mb-3">
                 <label for="name" class="form-label">Producto Precio</label>
-                <input type="text" required class="form-control" id="name" placeholder="Producto Precio" 
+                <input type="text" required class="form-control" id="price" placeholder="Producto Precio" 
                       name="price" value="{{ $product->price }}">             
               </div>
 
               <div class="mb-3">
                 <label for="name" class="form-label">Producto Stock</label>
-                <input type="text" required class="form-control" id="name" placeholder="Producto Stock" 
+                <input type="text" required class="form-control" id="stock" placeholder="Producto Stock" 
                       name="stock" value="{{ $product->stock }}">             
               </div>
 
