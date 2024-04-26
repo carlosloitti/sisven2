@@ -89,6 +89,16 @@ class InvoiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $invoice = Invoice::find($id);
+        $invoice->delete();
+
+        $invoices = DB::table('invoices')
+        ->join('customers', 'invoices.customer_id', '=' , 'customers.id')
+        ->join('pay_mode', 'invoices.pay_mode_id', '=' , 'pay_mode.id')
+        ->select('invoices.*', "customers.last_name" , "pay_mode.name")
+        ->get();
+              
+    return view('invoice.index', ['invoices' => $invoices]);
+
     }
 }

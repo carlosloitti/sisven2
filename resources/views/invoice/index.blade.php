@@ -39,7 +39,12 @@
                 
                 <td>
 
-                  <span>actions</span>
+                    <form action="{{ route('invoices.destroy', ['invoice' =>$invoice->id]) }}"
+                        method="POST" style="display: inline-block">
+                        @method('delete')
+                        @csrf
+                       <input class="btn btn-danger" type="submit" value="delete">
+                    </form>
 
                   </td>
                    
