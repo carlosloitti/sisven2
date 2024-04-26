@@ -16,7 +16,8 @@ class InvoiceController extends Controller
         
         $invoices = DB::table('invoices')
             ->join('customers', 'invoices.customer_id', '=' , 'customers.id')
-            ->select('invoices.*', "customers.last_name")
+            ->join('pay_mode', 'invoices.pay_mode_id', '=' , 'pay_mode.id')
+            ->select('invoices.*', "customers.last_name" , "pay_mode.name")
             ->get();
                   
         return view('invoice.index', ['invoices' => $invoices]);
@@ -27,7 +28,13 @@ class InvoiceController extends Controller
      */
     public function create()
     {
-        //
+        $customers = DB::table('customers')->orderBy('last_name')->get();    
+        $pay_modes = DB::table('pay_mode')->orderBy('name')->get();       
+        
+        
+        
+        
+        return view('invoice.new', ['customers' => $customers, 'pay_mode' => $pay_modes]);
     }
 
     /**
@@ -35,7 +42,22 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $invoice = new Invoice();
+        $invoice->number = $request->number;
+        $invoice->customer_id= $request->code;
+        $invoice->date  = $request->date; 
+        $invoice->pay_mode_id = $request->code;
+        $invoice->save();
+
+
+        $invoices = DB::table('invoices')
+        ->join('customers', 'invoices.customer_id', '=' , 'customers.id')
+        ->join('pay_mode', 'invoices.pay_mode_id', '=' , 'pay_mode.id')
+        ->select('invoices.*', "customers.last_name" , "pay_mode.name")
+        ->get();
+              
+    return view('invoice.index', ['invoices' => $invoices]);
+
     }
 
     /**

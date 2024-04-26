@@ -16,13 +16,13 @@
 
     <h1>Listado de Facturas</h1>
  
-
+    <a href="{{ route('invoices.create') }}" class="btn btn-success">Add</a>
     <table class="table">
         <thead>
           <tr>
             <th scope="col">Code</th>
             <th scope="col">numero</th> 
-            <th scope="col">customer</th> 
+            <th scope="col">customer</th>             
             <th scope="col">fecha</th> 
             <th scope="col">modo de pago</th> 
             <th scope="col">Actions</th>
@@ -34,8 +34,9 @@
                 <th scope="row">{{ $invoice->id}}</th>
                 <td>{{ $invoice->number}}</td>
                 <td>{{ $invoice->last_name}}</td>
-                <td>{{ $invoice->date}}</td> 
-                <td>{{ $invoice->pay_mode_id}}</td> 
+                <td>{{ $invoice->date}}</td>  
+                <td>{{ $invoice->name}}</td>  
+                
                 <td>
 
                   <span>actions</span>
