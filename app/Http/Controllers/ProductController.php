@@ -69,7 +69,11 @@ class ProductController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $product = Product::find($id);
+        $categories = DB::table('categories')
+        ->orderBy('name')
+        ->get();
+        return view('product.edit' , ['product'  => $product, 'categories' => $categories]);
     }
 
     /**
@@ -77,7 +81,19 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::find($id);
+        $product->name = $request->name;
+        $product->price= $request->price;
+        $product->stock  = $request->stock; 
+        $product->category_id = $request->code;
+        $product->save();
+
+        $products = DB::table('products')
+        ->join('categories', 'products.category_id', '=' , 'categories.id')
+        ->select('products.*', "categories.name")
+        ->get();
+    
+    return view('product.index', ['products' => $products]);
     }
 
     /**

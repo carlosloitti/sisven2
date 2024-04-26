@@ -11,6 +11,14 @@
     <title>Listado de Productos</title>
   </head> 
 
+
+  <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Products') }}
+        </h2>
+    </x-slot>
+
   <body>
 
     <h1>Listado de Productos</h1>
@@ -38,6 +46,9 @@
                 <td>{{ $product->name}}</td> 
                 <td>
 
+                  <a href=" {{ route('products.edit' , ['product'=>$product->id]) }} " 
+                    class=" btn btn-info"> Edit </a></li>
+
                      
                   <form action="{{ route('products.destroy', ['product' =>$product->id]) }}"
                     method="POST" style="display: inline-block">
@@ -54,7 +65,7 @@
       </table>
     </div>
 
-     
+  </x-app-layout>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
