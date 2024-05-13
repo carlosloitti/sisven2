@@ -24,7 +24,7 @@
             <div class="mb-3">
               <label for="name" class="form-label">Factura numero</label>
               <input type="text" class="form-control" id="id" aria-describedby="nameHelp" name="number"
-             placeholder="Factura Nombre" >             
+             placeholder="Factura numero" >             
             </div>
 
 

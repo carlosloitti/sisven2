@@ -10,7 +10,13 @@
 
     <title>Listado de Facturas</title>
   </head> 
- 
+
+  <x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Facturas') }}
+        </h2>
+    </x-slot>
 
   <body>
 
@@ -57,6 +63,8 @@
       </table>
     </div>
  
+    
+  </x-app-layout>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

@@ -24,6 +24,12 @@
                     </x-nav-link>
 
 
+                    <x-nav-link :href="route('invoices.index')" :active="request()->routeIs('invoices.index')">
+                        {{ __('Facturas') }}                                                                      
+                         
+                    </x-nav-link>
+
+
 
                 </div>
             </div>
