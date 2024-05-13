@@ -11,11 +11,12 @@ Route::get('/user', function (Request $request) {
 
 
 Route::get('/products' , [ProductController::class, 'index'])->name('products');
-Route::post('/products' , [ProductController::class, 'store'])->name('products.store');
-Route::get('/products/create' , [ProductController::class, 'create'])->name('products.create');
-Route::delete('/products/{product}' , [ProductController::class, 'destroy'])->name('products.destroy');
-Route::put('/products/{product}' , [ProductController::class, 'update'])->name('products.update');
-Route::get('/products/{product}/edit' , [ProductController::class, 'edit'])->name('products.edit');
+Route::post('/products' , [ProductController::class, 'store'])->name('products');
+Route::get('/products/create' , [ProductController::class, 'create'])->name('products');
+Route::delete('/products/{product}' , [ProductController::class, 'destroy'])->name('products');
+Route::put('/products/{product}' , [ProductController::class, 'update'])->name('products');
+Route::get('/products/{product}/edit' , [ProductController::class, 'edit'])->name('products');
 
 
 Route::get('/categories' , [CategorieController::class, 'index'])->name('categories');
+Route::post('/categories' , [CategorieController::class, 'store'])->name('categories');
