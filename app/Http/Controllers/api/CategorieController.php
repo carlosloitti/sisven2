@@ -14,13 +14,16 @@ class CategorieController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+    
     {
         $categories = DB::table('categories')
         ->orderBy('categories.name') 
         ->get();
+
     
     return json_encode(['categories' => $categories]);
     }
+
 
     /**
      * Store a newly created resource in storage.

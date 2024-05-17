@@ -43,7 +43,7 @@
                 <td>{{ $product->name}}</td>
                 <td>{{ $product->price}}</td>
                 <td>{{ $product->stock}}</td> 
-                <td>{{ $product->name}}</td> 
+                <td>{{ $product->category_id}}</td> 
                 <td>
 
                   <a href=" {{ route('products.edit' , ['product'=>$product->id]) }} " 
