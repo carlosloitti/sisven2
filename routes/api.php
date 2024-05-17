@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\CategorieController;
 use App\Http\Controllers\api\ClienteController;
+use App\Http\Controllers\api\PayController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\ProductController;
@@ -25,8 +26,15 @@ Route::post('/categories' , [CategorieController::class, 'store'])->name('catego
 
 
 Route::get('/clientes' , [ClienteController::class, 'index'])->name('clientes'); 
-Route::post('/clientes' , [ClienteController::class, 'store'])->name('products');
-Route::get('/clientes/create' , [ClienteController::class, 'create'])->name('products');
-Route::delete('/clientes/{product}' , [ClienteController::class, 'destroy'])->name('products');
-Route::put('/clientes/{cliente}' , [ClienteController::class, 'update'])->name('products');
-Route::get('/clientes/{cliente}/edit' , [ClienteController::class, 'edit'])->name('products');
+Route::post('/clientes' , [ClienteController::class, 'store'])->name('clientes');
+Route::get('/clientes/create' , [ClienteController::class, 'create'])->name('clientes');
+Route::delete('/clientes/{cliente}' , [ClienteController::class, 'destroy'])->name('clientes');
+Route::put('/clientes/{cliente}' , [ClienteController::class, 'update'])->name('clientes');
+Route::get('/clientes/{cliente}/edit' , [ClienteController::class, 'edit'])->name('clientes');
+
+Route::get('/pays' , [PayController::class, 'index'])->name('pays'); 
+Route::post('/pays' , [PayController::class, 'store'])->name('pays');
+Route::get('/pays/create' , [PayController::class, 'create'])->name('pays');
+Route::delete('/pays/{pay}' , [PayController::class, 'destroy'])->name('pays');
+Route::put('/pays/{pay}' , [PayController::class, 'update'])->name('pays');
+Route::get('/pays/{pay}/edit' , [PayController::class, 'edit'])->name('pays');

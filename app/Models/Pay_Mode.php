@@ -11,4 +11,5 @@ class Pay_Mode extends Model
     protected $table = 'pay_mode';
     protected $primaryKey = 'id';
     public $timestamps = false;
+    
 }
